@@ -1,0 +1,64 @@
+.invitation__container {
+  padding: 4rem;
+  background: #d1c8bf;
+}
+
+.invitation__header {
+  color: #33271b;
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.8rem;
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.invitation__body {
+  color: #33271b;
+  font-size: 2rem;
+  /* font-family: 'Times New Roman', Times, serif; */
+  font-weight: 600;
+  line-height: 2.5rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+/* Cards */
+
+.cards__container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  max-width: 1120px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cards__wrapper {
+  position: relative;
+  margin: 50px 0 45px;
+}
+
+.cards__items {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .invitation__container {
+    padding: 2rem;
+  }
+
+  .invitation__header {
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+  }
+  
+  .invitation__body {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .cards__items {
+    margin: 1rem 0;
+  }
+}

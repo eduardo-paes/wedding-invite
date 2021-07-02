@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import Cards from '../components/Cards';
+import Invitation from '../components/Invitation';
 import MainContent from '../components/MainContent';
 import Footer from '../components/Footer';
 
@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <MainContent />
-      <Cards />
+      <Invitation />
       <Footer />
     </>
   );
