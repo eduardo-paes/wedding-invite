@@ -11,13 +11,13 @@ function Invitation() {
         width > 1024 
           ?
             <h2 className='invitation__body'>
-              A realizar-se às 10h00 do dia 20 de agosto de 2022 no <br/> Seminário Diocesano Nossa Senhora do Amor Divino. 
+              A realizar-se às 10h00 do dia 16 de julho de 2022 no <br/> Seminário Diocesano Nossa Senhora do Amor Divino. 
               <br/><br/>
               Após a cerimônia os noivos recepcionarão os convidados na mesma localidade, <br/> Estrada União e Indústria, 3441 - Corrêas, Petrópolis - RJ.
             </h2>
           :
             <h2 className='invitation__body'>
-              A realizar-se às 10h00 do dia 20 de agosto de 2022 no Seminário Diocesano Nossa Senhora do Amor Divino - Corrêas, Petrópolis - RJ. 
+              A realizar-se às 10h00 do dia 16 de julho de 2022 no Seminário Diocesano Nossa Senhora do Amor Divino - Corrêas, Petrópolis - RJ. 
               <br/><br/>
               Após a cerimônia os noivos recepcionarão os convidados na mesma localidade, Estrada União e Indústria, 3441 - Corrêas, Petrópolis - RJ.
             </h2>
@@ -27,9 +27,9 @@ function Invitation() {
           <ul className='cards__items'>
             <CardItem
               src='images/sao-jose.jpg'
-              text='Frase sobre São José aqui'
+              text='Tomei então por meu advogado e patrono o glorioso São José e a ele me confiei com fervor.'
               author="Autor"
-              label='São José'
+              label='Santa Teresa'
             />
             <CardItem
               src='images/matrimonio.jpg'
@@ -39,8 +39,8 @@ function Invitation() {
             />
             <CardItem
               src='images/virgem-maria.jpg'
-              text='Frase sobre Nossa Senhora aqui'
-              author="Autor"
+              text='Na prova ou na dificuldade, recorro à Mãe Maria, cujo olhar por si só é suficiente para dissipar todos os medos.'
+              author="Santa Teresinha"
               label='Virgem Santíssima'
             />
           </ul>
@@ -51,7 +51,7 @@ function Invitation() {
   );
 }
 
-
+//#region Pega dimensões da tela
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
@@ -74,5 +74,6 @@ function useWindowDimensions() {
 
   return windowDimensions;
 }
+//#endregion
 
 export default Invitation;

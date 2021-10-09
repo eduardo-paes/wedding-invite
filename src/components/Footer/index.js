@@ -3,20 +3,21 @@ import './styles.css';
 import { Button } from '../Button';
 
 const LinkButton = ({text, link}) => {
-  return (
-    <a href={link} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
-      <Button buttonStyle='btn--outline'>{text}</Button>
-    </a>
-  )
+
+  const onClick = () => {
+    window.open(link, "_blank");
+  }
+
+  return <Button buttonStyle='btn--outline' onClick={onClick}>{text}</Button>
 }
 
 function Footer() {
   return (
     <div className='footer-container'>
-      <p className='footer-subscription-heading'>
+      <p className='footer-question'>
         Gostaria de nos presentear?
       </p>
-      <p className='footer-subscription-text'>
+      <p className='footer-text'>
         É só acessar alguma das listas de presente abaixo e deixar a sua contribuição.
       </p>
       <div className='input-areas'>
@@ -24,7 +25,7 @@ function Footer() {
         <LinkButton text="Lista 2" link="https://www.google.com.br/"/>
         <LinkButton text="Lista 3" link="https://www.google.com.br/"/>
       </div>
-      <p className='footer-subscription-text'>
+      <p className='footer-text'>
         Deus lhe pague!
       </p>
     </div>

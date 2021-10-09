@@ -41,6 +41,7 @@
   padding-top: 67%;
   overflow: hidden;
   font-stretch: semi-expanded;
+  font-family: 'EB Garamond', serif;
 }
 
 .fade-img {
@@ -55,7 +56,7 @@
   margin-left: 10px;
   padding: 6px 8px;
   max-width: calc((100%) - 60px);
-  font-size: 12px;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #fff;
   background-color: #6d4732;
@@ -91,6 +92,7 @@
   font-size: 18px;
   min-height: 120px;
   line-height: 24px;
+  font-family: 'EB Garamond', serif;
 }
 
 .cards__item__author {
@@ -98,6 +100,7 @@
   font-size: 18px;
   line-height: 24px;
   text-align: right;
+  font-family: 'EB Garamond', serif;
 }
 
 @media only screen and (min-width: 1200px) {

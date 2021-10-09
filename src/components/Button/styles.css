@@ -1,5 +1,6 @@
 :root {
   --primary: #fff;
+  width: 100;
 }
 
 .btn {
@@ -8,6 +9,7 @@
   outline: none;
   border: none;
   cursor: pointer;
+  font-family: 'EB Garamond', serif;
 }
 
 .btn--primary {
