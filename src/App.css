@@ -2,8 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'EB Garamond', serif; */
-  font-family: 'Carattere', cursive;
 }
 
 @media only screen and (max-width: 1200px) {

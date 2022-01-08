@@ -1,14 +1,11 @@
 import React from 'react';
 import './styles.css';
-import { Button } from '../Button';
 
 const LinkButton = ({text, link}) => {
-
   const onClick = () => {
     window.open(link, "_blank");
   }
-
-  return <Button buttonStyle='btn--outline' onClick={onClick}>{text}</Button>
+  return <button className="btn_footer" onClick={onClick}> {text} </button>
 }
 
 function Footer() {

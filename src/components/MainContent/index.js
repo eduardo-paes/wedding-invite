@@ -5,7 +5,7 @@ function MainContent() {
   return (
     <div className='main-content-container'>
       <video className='video-player' autoPlay loop muted>
-        <source src="/videos/video-1.mp4" type='video/mp4' />
+        <source src="/videos/video-1.mp4" type='video/mp4'/>
       </video>
       {/* <video src='/videos/video-1.mp4' autoPlay loop muted /> */}
       {/* { VideoPlayer() } */}
