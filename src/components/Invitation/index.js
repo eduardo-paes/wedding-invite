@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 import CardItem from '../CardItem';
 import GeneralDialog from '../Dialog';
+import api from '../../api'
 
 //Cards contendo imagens ornamentais do convite
 // eslint-disable-next-line no-unused-vars
@@ -37,10 +38,27 @@ const Cards = () => {
 function Invitation() {
   const { width } = useWindowDimensions();
   const [open, setOpen] = useState(false);
+  const [convidado, setConvidado] = useState();
+  // const questaoID = props.match.params.id;
 
   const onClick = () => {
     setOpen(true);
   }
+
+  useEffect(() => {
+    async function fetchConvidadoAPI() {
+      await api.EncConvidadoPorId("615b9f82b638a5406b2a1f64")
+      .then(res => {
+        console.log(res.data.data);
+        setConvidado(res.data.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    }
+    fetchConvidadoAPI();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <div className='invitation_container'>
