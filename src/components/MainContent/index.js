@@ -9,7 +9,7 @@ function MainContent() {
       </video> */}
 
       <img
-        className='video-player'
+        className='landing-img'
         alt="landing"
         src="/images/img(28).jpg" //25,28,30,31,36,37,38,43,47
       />

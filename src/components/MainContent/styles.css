@@ -7,9 +7,18 @@
   background-size: cover;
 }
 
-.main-content-container {
-  height: 100vh;
+.landing-img {
+  object-fit: cover;
   width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  background-size: cover;
+}
+
+.main-content-container {
+  width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +47,7 @@
 @media screen and (max-width: 960px) {
   .main-content-container > h1 {
     font-size: 70px;
+    /* line-height: 2rem; */
     margin-top: -150px;
   }
 }
