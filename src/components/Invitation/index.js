@@ -51,6 +51,7 @@ function Invitation() {
       .then(res => {
         console.log(res.data.data);
         setConvidado(res.data.data);
+        console.log(convidado);
       })
       .catch(err => {
         console.log(err);
