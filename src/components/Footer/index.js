@@ -2,31 +2,28 @@ import React from 'react';
 import './styles.css';
 
 const LinkButton = ({text, link}) => {
-  const onClick = () => {
-    window.open(link, "_blank");
-  }
-  return <button className="btn_footer" onClick={onClick}> {text} </button>
+  const onClick = () => window.open(link, "_blank");
+  return <button className="btn_footer" onClick={onClick}>{text}</button>
 }
 
-function Footer() {
+export default function Footer() {
   return (
     <div className='footer-container'>
       <p className='footer-question'>
         Gostaria de nos presentear?
       </p>
       <p className='footer-text'>
-        É só acessar alguma das listas de presente abaixo e deixar a sua contribuição.
+        É só acessar a lista de presentes abaixo ou deixar a sua 
+        <br />contribuição através do botão de PIX.
       </p>
       <div className='input-areas'>
-        <LinkButton text="Lista 1" link="https://www.google.com.br/"/>
-        <LinkButton text="Lista 2" link="https://www.google.com.br/"/>
-        <LinkButton text="Lista 3" link="https://www.google.com.br/"/>
+        <LinkButton text="PRESENTES" link="https://1drv.ms/x/s!ArFZQQ-pHyEdrDgST6ZPD4oDrA0x?e=msOGrb"/>
+        <LinkButton text="PIX" link="https://nubank.com.br/pagar/xo385/2DPydkAAcr"/>
       </div>
       <p className='footer-text'>
-        Deus lhe pague!
+        Desde já o nosso muito obrigado por fazer parte de 
+        <br />algum modo da nossa história!
       </p>
     </div>
   );
 }
-
-export default Footer;

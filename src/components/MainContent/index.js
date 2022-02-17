@@ -16,7 +16,13 @@ function MainContent() {
 
       {/* <video src='/videos/video-1.mp4' autoPlay loop muted /> */}
       {/* { VideoPlayer() } */}
-      <h1 className='main-content-title'>{'Eduardo & Giovana'}</h1>
+
+      <div className='main-content-div'>
+        <h1 className='main-content-title h1-eduardo'>Eduardo</h1>
+        <h1 className='main-content-title h1-e'>{'&'}</h1>
+        <h1 className='main-content-title h1-giovana'>Giovana</h1>
+      </div>
+
       {/* <p className='main-content-paragraph'>O amor não cansa e nem se cansa...</p> */}
       {/* <p className='main-content-paragraph'>20/08/2022</p> */}
     </div>

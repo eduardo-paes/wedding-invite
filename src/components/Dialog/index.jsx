@@ -12,6 +12,7 @@ import Select from '@material-ui/core/Select';
 import { withStyles } from '@material-ui/core/styles';
 import api from '../../api'
 import './styles.css';
+import DenseTable from '../DenseTable';
 
 const ConfirmButton = withStyles((theme) => ({
   root: {
@@ -88,38 +89,51 @@ export default function GeneralDialog({setOpen, open, convidado, setConvidado}) 
       fullWidth={true} 
       maxWidth='sm'
       open={open}>
-      <DialogTitle styles="dialog_title">Confirmar Presença {convidado !== undefined ? "- " + convidado.nome : ""}</DialogTitle>
+      <DialogTitle>
+        Confirmar Presença {convidado !== undefined ? "- " + convidado.nome : ""}
+      </DialogTitle>
 
-        <DialogContent>
-          <DialogContentText styles="dialog_text">
-            Selecione abaixo o número de pessoas que virão com você para o evento. 
-            Observe que cada convidado possui um número máximo de convites por família, portanto, confirme apenas a quantidade que irá precisar.
-          </DialogContentText>
-          <FormControl fullWidth variant="filled">
-        <InputLabel id="select-label">Nº de Convites</InputLabel>
-        <Select
-          labelId="select-label"
-          fullWidth
-          value={convidado === undefined ? 1 : convidado.quantidade}
-          onChange={handleChange}
-        >
-          {
-            array.map((row, index) => {
-              return <MenuItem key={index} value={row}>{row}</MenuItem>
-            })
-          }
-        </Select>
-      </FormControl>
-        </DialogContent>
+      <DialogContent>
+        <DialogContentText>
+          Selecione abaixo o número de pessoas que virão com você para o evento. 
+          Observe que cada convidado possui um número máximo de convites por família, portanto, confirme apenas a quantidade que irá precisar.
+        </DialogContentText>
 
-        <DialogActions>
-          <CancelButton styles="dialog_button" onClick={handleClose} color="secondary">
-            Cancelar
-          </CancelButton>
-          <ConfirmButton styles="dialog_button" onClick={handleConfirm} color="primary">
-            Confirmar
-          </ConfirmButton>
-        </DialogActions>
+        <FormControl fullWidth variant="filled">
+          <InputLabel id="select-label">Nº de Convites</InputLabel>
+          <Select
+            variant='filled'
+            fullWidth
+            labelId="select-label"
+            value={convidado.quantidade}
+            onChange={handleChange}
+          >
+            {
+              array.map((row, index) => {
+                return <MenuItem key={index} value={row}>{row}</MenuItem>
+              })
+            }
+          </Select>
+        </FormControl>
+
+        <DialogContentText style={{ margin: "1rem 0 -0.3rem 0" }}>
+          A fim de evitar aglomerações preferimos optar por deixar abaixo as opções de molho que acompanharão o almoço a ser servido: o prato principal será massa. 
+          Ajude-nos indicando o molho de sua preferência e dos demais convidados confirmados.
+        </DialogContentText>
+        <DenseTable 
+          convidado={convidado} 
+          setConvidado={setConvidado} />
+      </DialogContent>
+
+      <DialogActions>
+        <CancelButton onClick={handleClose} color="secondary">
+          Cancelar
+        </CancelButton>
+        <ConfirmButton onClick={handleConfirm} color="primary">
+          Confirmar
+        </ConfirmButton>
+      </DialogActions>
+      
     </Dialog>
   );
 }

@@ -30,6 +30,7 @@
 .main-content-title {
   font-family: 'Great Vibes', cursive;
   font-weight: 300;
+  text-shadow: 0.2rem 0.2rem 0 rgba(100, 100, 100, 0.3);
 }
 
 .main-content-container > h1 {
@@ -42,6 +43,35 @@
   margin-top: 8px;
   color: #fff;
   font-size: 36px;
+}
+
+.main-content-div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  color: #fff;
+  font-size: 36px;
+}
+
+.h1-eduardo {
+  margin-right: 3.5rem;
+  font-size: 7rem;
+  margin-bottom: -1rem;
+}
+
+.h1-giovana {
+  margin-top: -1rem;
+  margin-left: 3.5rem;
+  font-size: 7rem;
+}
+
+.h1-e {
+  color: rgb(253, 244, 220);
+  text-shadow: 0.1rem 0.1rem 0 rgba(124, 105, 55, 0.644);
 }
 
 @media screen and (max-width: 960px) {
