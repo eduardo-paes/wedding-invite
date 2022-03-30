@@ -4,10 +4,6 @@ import {
   MenuItem, TableBody, TableCell, Paper
 } from '@material-ui/core';
 
-const style = {
-  margin: "1rem 0"
-}
-
 export default function DenseTable({convidado, setConvidado}) {
   const rows = [ 'Bechamel', 'Bolonhesa' ];
   const [array, setArray] = useState([]);
@@ -71,7 +67,7 @@ export default function DenseTable({convidado, setConvidado}) {
   };
   
   return (
-    <TableContainer style={style} component={Paper}>
+    <TableContainer style={{margin: "1rem 0"}} component={Paper}>
       <Table size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>

@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import DialogPresentes from '../DialogPresentes';
 import './styles.css';
 
-const LinkButton = ({text, link}) => {
-  const onClick = () => window.open(link, "_blank");
-  return <button className="btn_footer" onClick={onClick}>{text}</button>
-}
-
 export default function Footer() {
+  const [open, setOpen] = useState(false);
+  const onClickPix = () => window.open("https://nubank.com.br/pagar/xo385/2DPydkAAcr", "_blank")
+  const onClickPresentes = () => setOpen(true);
+
   return (
     <div className='footer-container'>
       <p className='footer-question'>
@@ -19,8 +19,13 @@ export default function Footer() {
       </p>
 
       <div>
-        <LinkButton text="PRESENTES" link="https://1drv.ms/x/s!ArFZQQ-pHyEdrDgST6ZPD4oDrA0x?e=msOGrb"/>
-        <LinkButton text="PIX" link="https://nubank.com.br/pagar/xo385/2DPydkAAcr"/>
+        <button className="btn_footer" onClick={onClickPresentes}>PRESENTES</button>
+        <button className="btn_footer" onClick={onClickPix}>PIX</button>
+
+        <DialogPresentes 
+          open={open} 
+          setOpen={setOpen}
+        />
       </div>
 
       <p className='footer-thanks'>
