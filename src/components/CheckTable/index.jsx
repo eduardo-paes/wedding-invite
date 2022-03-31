@@ -1,20 +1,16 @@
 import React, { useEffect } from 'react';
-import { lighten, makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
-import TableRow from '@material-ui/core/TableRow';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Checkbox from '@material-ui/core/Checkbox';
-import apis from '../../api';
-import { IconButton, Tooltip } from '@material-ui/core';
 import LinkIcon from '@material-ui/icons/Launch';
+import { makeStyles } from '@material-ui/core/styles';
+import { 
+  IconButton,   Tooltip, 
+  Table,        TableBody,
+  TableCell,    TableContainer,
+  TableHead,    TablePagination,
+  TableRow,     TableSortLabel,
+  Paper,        Checkbox 
+} from '@material-ui/core';
+import apis from '../../api';
+
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -82,37 +78,6 @@ function EnhancedTableHead(props) {
     </TableHead>
   );
 }
-
-const useToolbarStyles = makeStyles((theme) => ({
-  root: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(1),
-  },
-  highlight:
-    theme.palette.type === 'light'
-      ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
-      : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
-  title: {
-    flex: '1 1 100%',
-  },
-}));
-
-const EnhancedTableToolbar = () => {
-  const classes = useToolbarStyles();
-  return (
-    <Toolbar className={classes.root}>
-      <Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-        Nutrition
-      </Typography>
-    </Toolbar>
-  );
-};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -186,7 +151,8 @@ export default function EnhancedTable() {
     var tmp = presentes.map((x) => {
       if (x._id === value) {
         x.adquirido = checked;
-        x.adquiridoPor = id;
+        if (checked) x.adquiridoPor = id;
+        else x.adquiridoPor = undefined;
         adquirePresente(x);
       }
       return x;
@@ -206,7 +172,6 @@ export default function EnhancedTable() {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <EnhancedTableToolbar />
         <TableContainer>
           <Table
             className={classes.table}
