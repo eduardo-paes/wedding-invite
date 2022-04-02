@@ -38,13 +38,13 @@ function Invitation() {
                 width > 1024 
                   ?
                     <h2 className='invitation_body'>
-                      A realizar-se às 10h00 do dia 16 de julho de 2022 no <br/> Seminário Diocesano Nossa Senhora do Amor Divino. 
+                      A realizar-se às 9h30 do dia 16 de julho de 2022 no <br/> Seminário Diocesano Nossa Senhora do Amor Divino. 
                       <br/><br/>
                       Após a cerimônia os noivos recepcionarão os convidados na mesma localidade, <br/> Estrada União e Indústria, 3441 - Corrêas, Petrópolis - RJ.
                     </h2>
                   :
                     <h2 className='invitation_body'>
-                      A realizar-se às 10h00 do dia 16 de julho de 2022 no Seminário Diocesano Nossa Senhora do Amor Divino - Corrêas, Petrópolis - RJ. 
+                      A realizar-se às 9h30 do dia 16 de julho de 2022 no Seminário Diocesano Nossa Senhora do Amor Divino - Corrêas, Petrópolis - RJ. 
                       <br/><br/>
                       Após a cerimônia os noivos recepcionarão os convidados na mesma localidade, Estrada União e Indústria, 3441 - Corrêas, Petrópolis - RJ.
                     </h2>
