@@ -10,16 +10,13 @@ export default function Footer() {
   return (
     <div className='footer-container'>
       <p className='footer-question'>
-        Gostaria de nos presentear?
-      </p>
-
-      <p className='footer-text'>
-        É só acessar a lista de presentes abaixo ou deixar a sua 
-        contribuição através do botão de PIX.
+        Gostaria de nos presentear? <br />
+        É só acessar a Lista de Presentes! <br />
+        Sinta-se à vontade para nos enviar pelo site ou em forma de Pix.
       </p>
 
       <div>
-        <button className="btn_footer" onClick={onClickPresentes}>PRESENTES</button>
+        <button className="btn_footer" onClick={onClickPresentes}>LISTA</button>
         <button className="btn_footer" onClick={onClickPix}>PIX</button>
 
         <DialogPresentes 
@@ -29,8 +26,7 @@ export default function Footer() {
       </div>
 
       <p className='footer-thanks'>
-        Desde já o nosso muito obrigado por fazer parte de 
-        algum modo da nossa história!
+        Muito obrigado por fazer parte da nossa história!
       </p>
     </div>
   );

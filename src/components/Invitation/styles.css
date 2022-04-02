@@ -23,6 +23,16 @@
   font-family: 'EB Garamond', serif;
 }
 
+.invitation_limit {
+  color: #A27642;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+  font-family: 'EB Garamond', serif;
+}
+
 /* Button */
 .btn_outline {
   border-radius: 5px;
@@ -44,6 +54,10 @@
   text-align: center;
 }
 
+.carousel {
+  margin-top: -0.5rem;
+}
+
 .btn_outline:hover {
   transition: all 0.3s ease-out;
   background: #805C33;
@@ -51,31 +65,14 @@
   transition: 250ms;
 }
 
-/* Cards */
-.cards__container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  max-width: 1120px;
-  width: 90%;
-  margin: 0 auto;
-  font-family: 'EB Garamond', serif;
-}
-
-.cards__wrapper {
-  position: relative;
-  margin: 50px 0 45px;
-  font-family: 'EB Garamond', serif;
-}
-
-.cards__items {
-  margin-bottom: 1rem;
-  font-family: 'EB Garamond', serif;
-}
-
 @media only screen and (max-width: 1200px) {
   .invitation_container {
     padding: 2rem;
+    padding-bottom: 3rem;
+  }
+
+  .carousel {
+    margin-top: -0.5rem;
   }
 
   .invitation_header {
@@ -88,7 +85,9 @@
     line-height: 2.5rem;
   }
 
-  .cards__items {
-    margin: 1rem 0;
+  .invitation_limit {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
   }
 }

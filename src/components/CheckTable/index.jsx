@@ -40,8 +40,7 @@ function stableSort(array, comparator) {
 
 const headCells = [
   { id: 'adquirido', label: 'Adquirido?', align: "center", padding: "normal" },
-  { id: 'nome', label: 'Nome', align: "left", padding: "normal" },
-  { id: 'descricao', label: 'Descrição', align: "left", padding: "normal" }
+  { id: 'nome', label: 'Nome', align: "left", padding: "normal" }
 ];
 
 function EnhancedTableHead(props) {
@@ -58,6 +57,7 @@ function EnhancedTableHead(props) {
             key={headCell.id}
             align={headCell.align}
             padding={headCell.padding}
+            style={{ fontWeight: "bold" }}
             sortDirection={orderBy === headCell.id ? order : false}
           >
             <TableSortLabel
@@ -82,6 +82,7 @@ function EnhancedTableHead(props) {
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    fontFamily: 'EB Garamond, serif'
   },
   paper: {
     width: '100%',
@@ -218,7 +219,6 @@ export default function EnhancedTable() {
                         </Tooltip>
                         {row.nome}
                       </TableCell>
-                      <TableCell align="left">{row.descricao}</TableCell>
                     </TableRow>
                   );
                 })}

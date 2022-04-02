@@ -1,5 +1,5 @@
 .footer-container {
-  background-color: #805C33;
+  background-color: rgb(42, 53, 84);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,7 +49,7 @@
 .btn_footer:hover {
   transition: all 0.3s ease-out;
   background: #fff;
-  color: #805C33;
+  color: #2a3554;
   transition: 250ms;
   font-weight: bold;
 }
