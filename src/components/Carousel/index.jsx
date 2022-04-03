@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
 const randomNumbers = () => {
-  var nums = [...Array(36).keys()].map(x => x + 1),
+  var nums = [...Array(21).keys()].map(x => x + 1),
   ranNums = [],
   i = nums.length,
   j = 0;
@@ -40,8 +40,11 @@ export default function PhotosCarousel ({withIndicators}) {
       <div className='gradientback' ></div>
       <div className='carousel-caption'>
         <h5 className='carousel-text'>
-          “A felicidade íntima da família é a beleza que nos traz para mais perto de Deus.” <br/>
-          (São Luís Martin)
+          {/* “A felicidade íntima da família é a beleza que nos traz para mais perto de Deus.” <br/>
+          (São Luís Martin) */}
+          "O tempo que vivemos é curto e frágil. Se nos for concedido que agrademos a Deus durante esta vida, 
+          ficaremos eternamente com Cristo e um com o outro, numa felicidade sem limites." <br/>
+          (São João Crisóstomo)
         </h5>
       </div>
     </div>
