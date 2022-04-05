@@ -30,27 +30,27 @@ function Invitation() {
         {
           convidado === undefined
             ? 
-              <h1 className='invitation_header'>Convite indisponível</h1>
+              <h1 className='invitation_header reveal'>Carregando convite...</h1>
             : 
               <>
-                <h1 className='invitation_header'>Convidam para a cerimônia do seu casamento</h1>
+                <h1 className='invitation_header reveal'>Convidam para a cerimônia do seu casamento</h1>
                 {
                 width > 1024 
                   ?
-                    <h2 className='invitation_body'>
+                    <h2 className='invitation_body reveal'>
                       A realizar-se às 9h30 do dia 16 de julho de 2022 no <br/> Seminário Diocesano Nossa Senhora do Amor Divino. 
                       <br/><br/>
                       Após a cerimônia os noivos recepcionarão os convidados na mesma localidade, <br/> Estrada União e Indústria, 3441 - Corrêas, Petrópolis - RJ.
                     </h2>
                   :
-                    <h2 className='invitation_body'>
+                    <h2 className='invitation_body reveal'>
                       A realizar-se às 9h30 do dia 16 de julho de 2022 no Seminário Diocesano Nossa Senhora do Amor Divino - Corrêas, Petrópolis - RJ. 
                       <br/><br/>
                       Após a cerimônia os noivos recepcionarão os convidados na mesma localidade, Estrada União e Indústria, 3441 - Corrêas, Petrópolis - RJ.
                     </h2>
                 }
 
-                <div className='invitation_button'>
+                <div className='invitation_button reveal'>
                   <button
                     className="btn_outline"
                     onClick={onClick}
@@ -66,7 +66,7 @@ function Invitation() {
                   />
                 </div>   
 
-                <p className='invitation_limit'>
+                <p className='invitation_limit reveal'>
                   Não deixe de confirmar sua presença até o dia 16 de Junho.
                 </p>           
               </>

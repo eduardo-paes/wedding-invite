@@ -54,15 +54,28 @@
   text-align: center;
 }
 
-.carousel {
-  margin-top: -0.5rem;
-}
-
 .btn_outline:hover {
   transition: all 0.3s ease-out;
   background: #805C33;
   color: #fff;
   transition: 250ms;
+}
+
+.carousel {
+  margin-top: -0.5rem;
+}
+
+/* Reveal */
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
 }
 
 @media only screen and (max-width: 1200px) {
