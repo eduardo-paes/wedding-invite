@@ -23,10 +23,10 @@ export default function PhotosCarousel ({withIndicators}) {
         {
           randomNumbers().map((photo, index) => {
             return (
-              <Carousel.Item interval={2000}>
+              <Carousel.Item key={index} interval={2000}>
                 <img
                   className="d-block w-100"
-                  key={index} 
+                  key={photo}
                   alt={'img-' + index} 
                   width='95%' 
                   height={'95%'}

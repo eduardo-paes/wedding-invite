@@ -190,8 +190,7 @@ export default function EnhancedTable() {
               {stableSort(presentes, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const cantCheck = row.adquiridoPor !== undefined && row.adquiridoPor !== id;
-
+                  const cantCheck = row.adquiridoPor && (row.adquiridoPor !== id && row.adquiridoPor !== '000000000000000000000000');
                   return (
                     <TableRow
                       hover
