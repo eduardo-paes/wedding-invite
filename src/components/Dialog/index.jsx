@@ -117,7 +117,7 @@ export default function GeneralDialog({setOpen, open, convidado, setConvidado}) 
         </FormControl>
 
         <DialogContentText style={{ margin: "1rem 0 -0.3rem 0" }}>
-          A fim de evitar aglomerações preferimos optar por deixar abaixo as opções de molho que acompanharão o almoço a ser servido: o prato principal será massa. 
+          A fim de evitar aglomerações preferimos optar por deixar abaixo as opções de molho que acompanharão o prato principal, que será massa. 
           Ajude-nos indicando o molho de sua preferência e dos demais convidados confirmados.
         </DialogContentText>
         <DenseTable 
