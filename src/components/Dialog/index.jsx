@@ -96,7 +96,7 @@ export default function GeneralDialog({setOpen, open, convidado, setConvidado}) 
       <DialogContent>
         <DialogContentText>
           Selecione abaixo o número de pessoas que virão com você para o evento. 
-          Observe que cada convidado possui um número máximo de convites por família, portanto, confirme apenas a quantidade que irá precisar.
+          Observe que cada convidado possui um número máximo de convites por família, que serão nominais, portanto, confirme apenas a quantidade que irá precisar.
         </DialogContentText>
 
         <FormControl fullWidth variant="filled">
