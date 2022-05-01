@@ -13,11 +13,22 @@ export default function DenseTable({convidado, setConvidado}) {
     for (let i = 0; i <= Number(convidado.quantidade); i++) 
       newArray.push(i);
     setArray(newArray);
-    setConvidado(prev => ({
-      ...prev,
-      quantidadeBechamel: convidado.quantidade,
-      quantidadeBolonhesa: 0,
-    }));
+
+    if (convidado.confirmado === true) {
+      setConvidado(prev => ({
+        ...prev,
+        quantidadeBechamel: convidado.quantidadeBechamel,
+        quantidadeBolonhesa: convidado.quantidadeBolonhesa,
+      }));
+    }
+    else {
+      setConvidado(prev => ({
+        ...prev,
+        quantidadeBechamel: convidado.quantidade,
+        quantidadeBolonhesa: 0,
+      }));
+    }
+
     return () => {}
     // eslint-disable-next-line
   }, [convidado.quantidade])
