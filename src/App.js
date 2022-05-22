@@ -7,15 +7,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="main-root">
-      <Router>
-        <Switch>
-          <Route path='/login' exact component={Login} />
-          <Route path='/control' exact component={Control} />
-          <Route path='/' component={Home} />
-        </Switch>
-      </Router>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/login' exact component={Login} />
+        <Route path='/control' exact component={Control} />
+        <Route path='/' component={Home} />
+      </Switch>
+    </Router>
   );
 }
 

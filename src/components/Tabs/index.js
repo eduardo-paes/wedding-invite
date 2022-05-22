@@ -9,7 +9,9 @@ export default function CustomTabs() {
 
   return (
     <Tabs
-      id="controlled-tab-example"
+      id="controlled-tab"
+      hidden={false}
+      style={{height: "2.7rem"}}
       activeKey={key}
       onSelect={(k) => setKey(k)}
       className="mb-3"
