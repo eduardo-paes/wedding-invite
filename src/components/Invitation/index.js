@@ -54,9 +54,9 @@ function Invitation() {
                   <button
                     className="btn_outline"
                     onClick={onClick}
-                    disabled={convidado?.confirmado === true && new Date().toISOString().split('T')[0] === "2022-06-16"}
+                    disabled={new Date().toISOString().split('T')[0] === "2022-06-16"}
                   >
-                    {convidado?.confirmado === true && new Date().toISOString().split('T')[0] === "2022-06-16" ? "Presença Confirmada" : "Confirmar Presença"}
+                    {convidado?.confirmado === true ? "Presença Confirmada" : "Confirmar Presença"}
                   </button>
                   <GeneralDialog 
                     open={open} 
