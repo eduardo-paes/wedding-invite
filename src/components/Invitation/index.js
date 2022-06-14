@@ -67,7 +67,7 @@ function Invitation() {
                   />
                 </div>   
 
-                <p className='invitation_limit reveal'>
+                <p className='invitation_limit reveal' style={{visibility: foraData ? 'collapse' : 'visible'}}>
                   Não deixe de confirmar sua presença até o dia 16 de Junho.
                 </p>           
               </>
