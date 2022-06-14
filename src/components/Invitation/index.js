@@ -9,6 +9,7 @@ function Invitation() {
   const [open, setOpen] = useState(false);
   const [convidado, setConvidado] = useState();
   const onClick = () => setOpen(true);
+  const foraData = (new Date() >= new Date('2022', '06', '16', '00', '00', '01'));
 
   useEffect(() => {
     async function fetchConvidadoAPI() {
@@ -54,7 +55,7 @@ function Invitation() {
                   <button
                     className="btn_outline"
                     onClick={onClick}
-                    disabled={new Date().toISOString().split('T')[0] === "2022-06-16"}
+                    disabled={foraData}
                   >
                     {convidado?.confirmado === true ? "Presença Confirmada" : "Confirmar Presença"}
                   </button>
