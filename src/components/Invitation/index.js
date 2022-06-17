@@ -56,7 +56,7 @@ function Invitation() {
                   <button
                     className={foraData() ? "btn_outline_clicked" : "btn_outline"}
                     onClick={onClick}
-                    // disabled={foraData()}
+                    disabled={foraData()}
                   >
                     {convidado?.confirmado === true ? "Presença Confirmada" : "Confirmar Presença"}
                   </button>
