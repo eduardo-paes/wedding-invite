@@ -16,6 +16,11 @@
 /* Folheto  */
 .folheto {
 	font-family: Cambria,Georgia,serif; 
+  padding: 1.5rem;
+}
+
+.folheto p {
+  font-size: 1.2rem;
 }
 
 .fol-header {
@@ -28,12 +33,12 @@
 }
 
 .fol-rito {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
 .fol-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
