@@ -6,9 +6,11 @@ function Rito ({text}) {
 
 function Todos ({text}) {
   return(
-    <strong>
-      <strong className='fol-init'>T.: </strong>{text}
-    </strong>
+    <p>
+      <strong>
+        <strong className='fol-init'>T.: </strong>{text}
+      </strong>
+    </p>
   )
 }
 
@@ -30,6 +32,14 @@ function Subtitulo({text}){
 
 function Comum({text}){
   return <p className="fol-comum">{text}</p>
+}
+
+function Noivo ({text, ini}) {
+  return (
+    <p>
+      <strong className='fol-init'>{ini}</strong> {text}
+    </p>
+  )
 }
 
 function Leitura({title, content, antifon, begin, end}) {
@@ -126,20 +136,20 @@ export default function Folheto(props) {
 
       <section id="ritos-matrimoniais" className="fol-body">
         <Rito text="Rito Sacramental do Matrimônio" />
-        <Sacerdote text="Caros noivos, N. e N. viestes a esta Igreja, para que, na presença do sacerdote e da comunidade cristã de contrair matrimônio seja marcada por Cristo com um sinal sagrado. Cristo abençoa com generosidade o vosso amor conjugal. Já vos tendo consagrado pelo batismo, vai enriquecer e fortalecer-vos agora com o sacramento do Matrimônio, para que sejais fiéis um ao outro por toda a vida e possais assumir todos os deveres do Matrimônio."/>
+        <Sacerdote text="Caros noivos, Giovana e Eduardo viestes a esta Igreja, para que, na presença do sacerdote e da comunidade cristã de contrair matrimônio seja marcada por Cristo com um sinal sagrado. Cristo abençoa com generosidade o vosso amor conjugal. Já vos tendo consagrado pelo batismo, vai enriquecer e fortalecer-vos agora com o sacramento do Matrimônio, para que sejais fiéis um ao outro por toda a vida e possais assumir todos os deveres do Matrimônio."/>
         
         <Subtitulo text="Diálogo antes do consentimento"/>
-        <Sacerdote text="N. e N. viestes aqui para unir-vos em Matrimônio. Por isso, eu vos pergunto perante a Igreja: É de livre e espontânea vontade que o fazeis? "/>
-        <Sacerdote text="Sim!"/>
+        <Sacerdote text="Giovana e Eduardo viestes aqui para unir-vos em Matrimônio. Por isso, eu vos pergunto perante a Igreja: É de livre e espontânea vontade que o fazeis? "/>
+        <Noivo text="Sim!" ini="Noivos: "/>
         <Sacerdote text="Abraçando o Matrimônio, ides prometer amor e fidelidade um ao outro. É por toda vida que prometeis? "/>
-        <Sacerdote text="Sim!"/>
+        <Noivo text="Sim!" ini="Noivos: "/>
         <Sacerdote text="Estais dispostos a receber com amor os filhos que Deus vos confiar, educando-os na lei de Cristo e da Igreja? "/>
-        <Sacerdote text="Sim!"/>
+        <Noivo text="Sim!" ini="Noivos: "/>
 
         <Subtitulo text="Consentimento"/>
         <Sacerdote text="Para manifestar o vosso consentimento em selar a sagrada aliança do Matrimônio, diante de Deus e da Igreja aqui reunida, daí um ao outro a mão direita. "/>
-        <Sacerdote text="Eu, N. te recebo, N., por minha esposa e te prometo ser fiel amar-te e respeitar-te na alegria e na tristeza, na saúde e na doença, todos os dias da nossa vida."/>
-        <Sacerdote text="Eu, N. te recebo, N., por meu esposo e te prometo ser fiel, amar-te e respeitar-te na alegria e na tristeza, na saúde e na doença, todos os dias na nossa vida."/>
+        <Noivo ini="Noivo: " text="Eu, Eduardo te recebo, Giovana, por minha esposa e te prometo ser fiel amar-te e respeitar-te na alegria e na tristeza, na saúde e na doença, todos os dias da nossa vida."/>
+        <Noivo ini="Noiva: " text="Eu, Giovana te recebo, Eduardo, por meu esposo e te prometo ser fiel, amar-te e respeitar-te na alegria e na tristeza, na saúde e na doença, todos os dias na nossa vida."/>
 
         <Subtitulo text="Aceitação do consentimento"/>
         <Sacerdote text="O Deus de Abraão, o Deus de Isaac, o Deus de Jacó, o Deus que abençoou os nossos primeiros pais no paraíso confirme e abençoe em Cristo este compromisso que manifestastes perante a Igreja. Ninguém, separe o que Deus uniu. Bendigamos ao Senhor!"/>
@@ -149,9 +159,9 @@ export default function Folheto(props) {
         <Sacerdote text="Ó Deus, que fizestes aliança conosco, abençoai + as alianças de Giovana e Eduardo, para que estes vossos filhos permaneçam fiéis um ao outro e amem-se mutuamente em vossa paz. Por Cristo, nosso Senhor."/>
         <Todos text="Amém."/>
 
-        <Sacerdote text="N., recebe esta aliança em sinal do meu amor e da minha fidelidade. Em nome do Pai, e do Filho e do Espírito Santo."/>
-        <Sacerdote text="N., recebe esta aliança em sinal do meu amor e da minha fidelidade. Em nome do Pai, e do Filho e do Espírito Santo."/>
-
+        <Noivo ini="Esposo: " text="Giovana, recebe esta aliança em sinal do meu amor e da minha fidelidade. Em nome do Pai, e do Filho e do Espírito Santo."/>
+        <Noivo ini="Esposa: " text="Eduardo, recebe esta aliança em sinal do meu amor e da minha fidelidade. Em nome do Pai, e do Filho e do Espírito Santo."/>
+            
       </section>
     </div>
   )
