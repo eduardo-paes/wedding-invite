@@ -4,12 +4,13 @@ import GeneralDialog from '../Dialog';
 import api from '../../api'
 import PhotosCarousel from '../Carousel';
 
+const foraData = () => { return (new Date() >= new Date('2022', '05', '16', '00', '00', '01')); }
+
 function Invitation() {
   const { width } = useWindowDimensions();
   const [open, setOpen] = useState(false);
   const [convidado, setConvidado] = useState();
   const onClick = () => setOpen(true);
-  const foraData = (new Date() >= new Date('2022', '06', '16', '00', '00', '01'));
 
   useEffect(() => {
     async function fetchConvidadoAPI() {
@@ -53,9 +54,9 @@ function Invitation() {
 
                 <div className='invitation_button reveal'>
                   <button
-                    className="btn_outline"
+                    className={foraData() ? "btn_outline_clicked" : "btn_outline"}
                     onClick={onClick}
-                    disabled={foraData}
+                    disabled={foraData()}
                   >
                     {convidado?.confirmado === true ? "Presença Confirmada" : "Confirmar Presença"}
                   </button>
@@ -67,7 +68,7 @@ function Invitation() {
                   />
                 </div>   
 
-                <p className='invitation_limit reveal' style={{visibility: foraData ? 'collapse' : 'visible'}}>
+                <p className='invitation_limit reveal' style={{visibility: foraData() ? 'collapse' : 'visible'}}>
                   Não deixe de confirmar sua presença até o dia 16 de Junho.
                 </p>           
               </>
