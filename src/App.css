@@ -17,6 +17,7 @@
 .folheto {
 	font-family: Cambria,Georgia,serif; 
   padding: 1.5rem;
+  background-color: hsl(44, 30%, 80%);
 }
 
 .folheto p {
@@ -35,7 +36,7 @@
 .fol-rito {
   font-size: 1.6rem;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .fol-subtitle {
@@ -44,13 +45,13 @@
 }
 
 .fol-cite {
-  margin: 1rem 0;
-  font-size: 1.4rem;
+  margin: 2rem 0;
+  font-size: 1.2rem;
   font-style: italic;
 }
 
 .fol-canto {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-style: italic;
 }
 

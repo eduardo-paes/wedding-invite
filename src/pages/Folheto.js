@@ -1,7 +1,34 @@
+//#region Comps
 import React from 'react'
 
+const chart = [
+  [ 'M', 1000],
+  ['CM',  900],
+  [ 'D',  500],
+  ['CD',  400],
+  [ 'C',  100],
+  ['XC',   90],
+  [ 'L',   50],
+  ['XL',   40],
+  [ 'X',   10],
+  ['IX',    9],
+  [ 'V',    5],
+  ['IV',    4],
+  [ 'I',    1]
+];
+var countSubtitulo = 1;
+var countRito = 1;
+
+const toRoman = (decimal) =>
+  chart.reduce((acc, numeral) => {
+    const [roman, remainder] = acc;
+    const [letter, value] = numeral;
+    return [roman + letter.repeat(remainder / value),
+            remainder % value];
+  }, ['', decimal])[0];
+
 function Rito ({text}) {
-  return <h2 className="fol-rito">{text}</h2>
+  return <h2 className="fol-rito">{toRoman(countRito++)} - {text}</h2>
 }
 
 function Todos ({text}) {
@@ -19,32 +46,34 @@ function Canto ({text}) {
 }
 
 function Subtitulo({text}){
-  return <h2 className="fol-subtitle">{text}</h2>
+  return <h2 className="fol-subtitle">{countSubtitulo++}. {text}</h2>
 }
 
 function Comum({text}){
-  return <p className="fol-comum">{text}</p>
+  return <p>{text}</p>
 }
 
-function Especifico ({text, ini = 'S.:'}) {
+function Especifico ({text, ini = 'S.:', italic = false}) {
   return (
-    <p>
+    <p className={italic && 'fol-canto'}>
       <strong className='fol-init'>{ini}</strong> {text}
     </p>
   )
 }
 
-function Leitura({title, content, antifon, begin, end}) {
+function Leitura({title, content, antifon, begin, end, resp}) {
   return (
     <>
       <Subtitulo text={title}/>
       <Canto text={antifon}/>
+      {resp && <Especifico italic={true} ini='Refrão: ' text={resp}/>}
       <Canto text={begin}/>
       <Comum text={content}/>
       <Canto text={end}/>
     </>
   )
 }
+//#endregion
 
 export default function Folheto(props) {
   return (
@@ -65,20 +94,16 @@ export default function Folheto(props) {
 
       <section id="ritos-iniciais" className="fol-body">
         <Rito text="Ritos Iniciais" />
-        <Canto text="Cortejo padrinhos e noivo: Jesus alegria dos homens, Johann S. Bach"/>
-        <Canto text="Canto de entrada: Alma redemptoris Mater"/>
-        <Canto text="Cortejo da noiva: Ária da corda sol, Johann S. Bach"/>
-
         <Especifico text="Em nome do Pai, e do Filho e do Espírito Santo."/>
         <Todos text="Amém."/>        
         <Especifico text="A graça de Nosso Senhor Jesus Cristo, o amor do Pai e a comunhão do Espírito Santo estejam convosco!"/>
         <Todos text="Bendito seja Deus que nos reuniu no amor de Cristo."/>
-        <Especifico text="Para a celebração deste casamento, meus irmãos e irmãs, felizes, aqui nos reunimos na casa do Senhor, no dia em que estes nossos amigos Eduardo e Giovana resolveram estabelecer o seu novo lar. Para eles este momento é de suma importância! Por isso, vamos acompanhá-los com a nossa amizade e nossa oração fraterna. Unidos a eles, ouviremos atentamente a Palavra que hoje Deus nos dirige. E depois, juntamente com a Santa Igreja, por meio de Jesus Cristo, nosso Senhor, vamos pedir a Deus Pai que acolha, abençoe e mantenha sempre unidos estes noivos, seus servos e nossos irmãos. "/>
+        <Especifico text="Para a celebração deste casamento, meus irmãos e irmãs, felizes, aqui nos reunimos na casa do Senhor, no dia em que estes nossos amigos Eduardo e Giovana resolveram estabelecer o seu novo lar. Para eles este momento é de suma importância! Por isso, vamos acompanhá-los com a nossa amizade e nossa oração fraterna. Unidos a eles, ouviremos atentamente a Palavra que hoje Deus nos dirige. E depois, juntamente com a Santa Igreja, por meio de Jesus Cristo, nosso Senhor, vamos pedir a Deus Pai que acolha, abençoe e mantenha sempre unidos estes noivos, seus servos e nossos irmãos."/>
 
         <Subtitulo text="Ato Penitencial"/>
         <Canto text="Canto: Missa iste confessor, Palestrina"/>
         <Subtitulo text="Oração do Dia"/>
-        <Especifico text="Oremos. Ó Deus, que desde o princípio santificastes misteriosamente a união conjugal, para prefigurar no casamento o mistério do Cristo e da Igreja, daí a Eduardo e Giovana realizar em sua vida este grande sacramento. Por nosso Senhor Jesus Cristo, vosso Filho, na unidade do Espírito Santo. "/>
+        <Especifico text="Oremos. Ó Deus, que desde o princípio santificastes misteriosamente a união conjugal, para prefigurar no casamento o mistério do Cristo e da Igreja, dai a Eduardo e Giovana realizar em sua vida este grande sacramento. Por nosso Senhor Jesus Cristo, vosso Filho, na unidade do Espírito Santo."/>
       </section>
 
       <section id="liturgia-palavra" className="fol-body">
@@ -87,12 +112,13 @@ export default function Folheto(props) {
           title={"Primeira Leitura - Tb 8, 4b-8"}
           antifon={"Que cheguemos, juntos, a uma idade avançada."}
           begin={"Leitura do Livro de Tobias"}
-          content={"Na noite de núpcias, disse Tobias a Sara: “Levanta-te, irmã! Oremos e imploremos a nosso Senhor que nos conceda misericórdia e salvação”. Ele levantou-se, e ambos se puseram a orar e a suplicar que lhes fosse concedida a salvação. Ele começou dizendo: “Tu és bendito, ó Deus de nossos pais, e bendito é o teu nome, por todos os séculos e gerações! Que os céus e todas as tuas criaturas te bendigam por todos os séculos! Foste tu quem criou Adão, e para ele criaste Eva, sua mulher, para que lhe servisse de ajuda e apoio. De ambos teve início a geração dos homens. Tu mesmo disseste: “Não é bom que o homem esteja só. Vamos fazer-lhe uma auxiliar semelhante a ele”. Agora, Senhor, não é por desejo impuro que eu recebo, como esposa, esta minha irmã, mas faço-o de coração sincero. Se misericordioso comigo e com ela e concede-nos que cheguemos, juntos, a uma idade avançada”. Disseram, depois, a uma só voz: “Amém! Amém!”"}
+          content={"Na noite de núpcias, disse Tobias a Sara: “Levanta-te, irmã! Oremos e imploremos a nosso Senhor que nos conceda misericórdia e salvação”. Ele levantou-se, e ambos se puseram a orar e a suplicar que lhes fosse concedida a salvação. Ele começou dizendo: “Tu és bendito, ó Deus de nossos pais, e bendito é o teu nome, por todos os séculos e gerações! Que os céus e todas as tuas criaturas te bendigam por todos os séculos! Foste tu quem criou Adão, e para ele criaste Eva, sua mulher, para que lhe servisse de ajuda e apoio. De ambos teve início a geração dos homens. Tu mesmo disseste: “Não é bom que o homem esteja só. Vamos fazer-lhe uma auxiliar semelhante a ele”. Agora, Senhor, não é por desejo impuro que eu recebo, como esposa, esta minha irmã, mas faço-o de coração sincero. Sê misericordioso comigo e com ela e concede-nos que cheguemos, juntos, a uma idade avançada”. Disseram, depois, a uma só voz: “Amém! Amém!”"}
           end={"Palavra do Senhor."}
         />
+        <Todos text="Graças a Deus."/>
         <Leitura
           title={"Salmo Responsorial - Salmo 127 (128)"}
-          begin={"Refrão: O amor do Senhor Deus por quem o teme é de sempre e perdura para sempre."}
+          resp={"O amor do Senhor Deus por quem o teme é de sempre e perdura para sempre."}
           content={
             <>
             Bendize, ó minha alma, ao Senhor,<br/>
@@ -119,21 +145,33 @@ export default function Folheto(props) {
           content={"Irmãos: Vós sois amados por Deus, sois os seus santos eleitos. Por isso, revesti-vos de sincera misericórdia, bondade, humildade, mansidão e paciência, suportando-vos uns aos outros e perdoando-vos mutuamente, se um tiver queixa contra o outro. Como o Senhor vos perdoou, assim perdoai-vos também. Mas, sobretudo, amai-vos uns aos outros, pois o amor é o vínculo da perfeição. Que a paz de Cristo reine em vossos corações, à qual fostes chamados como membros de um só corpo. E sede agradecidos. Que a palavra de Cristo, com toda a sua riqueza, habite em vós. Ensinai e admoestai-vos uns aos outros com toda a sabedoria. Do fundo dos vossos corações, cantai a Deus salmos, hinos e cânticos espirituais, em ação de graças. Tudo o que fizerdes, em palavras ou obras, seja feito em nome do senhor Jesus Cristo. Por meio dele dai graças a Deus, o Pai."}
           end={"Palavra do Senhor."}
         />
+        <Todos text="Graças a Deus."/>
         <Subtitulo text={"Aclamação ao Evangelho"}/>
         <Canto text="Canto: Aleluia, a Minh'alma Abrirei."/>
         <Leitura
           title={"Evangelho - Jo 2, 1-11 "}
-          antifon={"Este foi o início dos sinais de Jesus. Ele o realizou em Cana da Galileia."}
+          antifon={"Este foi o início dos sinais de Jesus. Ele o realizou em Caná da Galileia."}
           begin={"+ Proclamação do Evangelho de Jesus Cristo, escrito por João."}
           content={"Naquele tempo, houve um casamento em Cana da Galileia. A mãe de Jesus estava presente. Também Jesus e seus discípulos tinham sido convidados para o casamento. Como o vinho veio a faltar, a mãe de Jesus lhe disse: “Eles não têm mais vinho”. Jesus respondeu-lhe: “Mulher, por que dizes isso a mim? Minha hora ainda não chegou”. Sua Mãe disse aos que estavam servindo: “Fazei o que ele vos disser”. Estavam seis talhas de pedra colocadas aí para a purificação que os judeus costumam fazer. Em cada uma delas cabiam mais ou menos cem litros. Jesus disse aos que estavam servindo: “Enchei as talhas de água”. Encheram-nas até a boca.Jesus disse: “Agora tirai e levai ao mestre-sala”. E eles levaram. O mestre-sala experimentou a água, que se tinha transformado em vinho. Ele não sabia de onde vinha, mas os que estavam servindo sabiam, pois eram eles que tinham tirado a água. O mestre-sala chamou então o noivo e lhe disse: “Todo o mundo serve primeiro o vinho melhor e, quando os convidados já estão embriagados, serve o vinho menos bom. Mas tu guardaste o vinho melhor até agora!” Este foi o início dos sinais de Jesus. Ele o realizou em Cana da Galileia e manifestou a sua glória, e seus discípulos creram nele. "}
           end={"Palavra da salvação."}
         />
+        <Todos text="Glória a Vós, Senhor."/>
         <Subtitulo text={"Homilia"}/>
       </section>
 
       <section id="ritos-matrimoniais" className="fol-body">
         <Rito text="Rito Sacramental do Matrimônio" />
-        <Especifico text="Caros noivos, Eduardo e Giovana viestes a esta Igreja, para que, na presença do sacerdote e da comunidade cristã de contrair matrimônio seja marcada por Cristo com um sinal sagrado. Cristo abençoa com generosidade o vosso amor conjugal. Já vos tendo consagrado pelo batismo, vai enriquecer e fortalecer-vos agora com o sacramento do Matrimônio, para que sejais fiéis um ao outro por toda a vida e possais assumir todos os deveres do Matrimônio."/>
+        <Especifico text="Caros noivos, Eduardo e Giovana, 
+        viestes a esta Igreja, 
+        para que, na presença do sacerdote e da comunidade cristã, 
+        a vossa decisão de contrair Matrimônio 
+        seja marcada por Cristo com um sinal sagrado.
+        Cristo abençoa com generosidade o vosso amor conjugal. 
+        Já vos tendo consagrado pelo batismo, 
+        vai enriquecer e fortalecer-vos agora 
+        com o sacramento do Matrimônio, 
+        para que sejais fiéis um ao outro por toda a vida 
+        e possais assumir todos os deveres do Matrimônio."/>
         
         <Subtitulo text="Diálogo antes do consentimento"/>
         <Especifico text="Eduardo e Giovana viestes aqui para unir-vos em Matrimônio. Por isso, eu vos pergunto perante a Igreja: É de livre e espontânea vontade que o fazeis? "/>
@@ -144,7 +182,7 @@ export default function Folheto(props) {
         <Especifico text="Sim!" ini="Noivos: "/>
 
         <Subtitulo text="Consentimento"/>
-        <Especifico text="Para manifestar o vosso consentimento em selar a sagrada aliança do Matrimônio, diante de Deus e da Igreja aqui reunida, daí um ao outro a mão direita. "/>
+        <Especifico text="Para manifestar o vosso consentimento em selar a sagrada aliança do Matrimônio, diante de Deus e da Igreja aqui reunida, dai um ao outro a mão direita. "/>
         <Especifico ini="Noivo: " text="Eu, Eduardo te recebo, Giovana, por minha esposa e te prometo ser fiel amar-te e respeitar-te na alegria e na tristeza, na saúde e na doença, todos os dias da nossa vida."/>
         <Especifico ini="Noiva: " text="Eu, Giovana te recebo, Eduardo, por meu esposo e te prometo ser fiel, amar-te e respeitar-te na alegria e na tristeza, na saúde e na doença, todos os dias na nossa vida."/>
 
@@ -190,7 +228,7 @@ export default function Folheto(props) {
         <Especifico text="Demos graças ao Senhor nosso Deus." />
         <Todos text="É nosso dever e nossa salvação." />
 
-        <Especifico text="Na verdade, é justo e necessário é nosso dever e salvação dar-vos graças sempre e em todo lugar, Senhor Pai-Santo, Deus eterno e todo-poderoso, por Cristo, Senhor nosso. Nas núpcias, firmastes um suave jugo de amor e uma aliança indissolúvel de paz. Abençoais a fecundidade da família para que os filhos e as filhas nela nascidos aumentem oi número dos vossos filhos e filhas de adoção. Os que nascem para a alegria de todos, renascem pelo batismo, para a comunidade Cristã. Por essa razão, bendizemos vossa providência, e com os anjos e com todos os santos proclamamos jubilosos, vossa vontade, cantando a uma só voz:" />
+        <Especifico text="Na verdade, é justo e necessário é nosso dever e salvação dar-vos graças sempre e em todo lugar, Senhor Pai-Santo, Deus eterno e todo-poderoso, por Cristo, Senhor nosso. Nas núpcias, firmastes um suave jugo de amor e uma aliança indissolúvel de paz. Abençoais a fecundidade da família para que os filhos e as filhas nela nascidos aumentem o número dos vossos filhos e filhas de adoção. Os que nascem para a alegria de todos, renascem pelo batismo, para a comunidade Cristã. Por essa razão, bendizemos vossa providência, e com os anjos e com todos os santos proclamamos jubilosos, vossa vontade, cantando a uma só voz:" />
         <Todos text="Santo, Santo, Santo, Senhor Deus do universo! O céu e a terra proclamam a vossa glória. Hosana nas alturas! Bendito o que vem em nome do Senhor! Hosana nas alturas!" />
 
         <Especifico text="Pai de misericórdia, a quem sobem nossos louvores, nós vos pedimos por Jesus Cristo, vosso Filho e Senhor nosso, que abençoeis estas oferendas apresentadas ao vosso altar." />
@@ -283,7 +321,7 @@ export default function Folheto(props) {
         <Todos text="Amém."/>
 
         <Subtitulo text="Canto Final"/>
-        <Canto text="Canto: Tema da 9ª sinfonia, Beethove"/>
+        <Canto text="Canto: Tema da 9ª sinfonia, Beethoven"/>
       </section>
     </div>
   )
