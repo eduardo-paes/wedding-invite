@@ -87,8 +87,8 @@ export default function Folheto(props) {
           16/07/2022
         </h2>
         <h2 className="fol-cite">
-        "O tempo que vivemos é curto e frágil. Se nos for concedido que agrademos a Deus durante esta vida, ficaremos eternamente com Cristo e um com o outro, numa felicidade sem limites."
-        <br/>São João Crisóstomo
+        "A felicidade íntima da família é a beleza que nos traz para mais perto de Seus."
+        <br/>São Luis Martin
         </h2>
       </section>
 
