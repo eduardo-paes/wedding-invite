@@ -88,7 +88,7 @@ export default function Folheto(props) {
         </h2>
         <h2 className="fol-cite">
         "A felicidade íntima da família é a beleza que nos traz para mais perto de Deus."
-        <br/>São Luis Martin
+        <br/>São Luís Martin
         </h2>
       </section>
 
