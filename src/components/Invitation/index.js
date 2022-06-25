@@ -4,19 +4,25 @@ import GeneralDialog from '../Dialog';
 import api from '../../api'
 import PhotosCarousel from '../Carousel';
 
-const foraData = () => { return (new Date() >= new Date('2022', '05', '16', '00', '00', '01')); }
-
 function Invitation() {
   const { width } = useWindowDimensions();
   const [open, setOpen] = useState(false);
   const [convidado, setConvidado] = useState();
+  const [foraData, setForaData] = useState(false);
   const onClick = () => setOpen(true);
 
   useEffect(() => {
     async function fetchConvidadoAPI() {
       await api.EncConvidadoPorId(window.location.href.split('/')[3])
       .then(res => {
-        setConvidado(res.data.data);
+        let model = res.data.data;
+        console.log(model);
+        if (!Array.isArray(model)) {
+          setConvidado(model);
+          if (new Date() >= new Date('2022', '05', '16', '00', '00', '01') && model.confirmado) {
+            setForaData(true);
+          }
+        }
       })
       .catch(err => {
         console.log(err);
@@ -54,9 +60,9 @@ function Invitation() {
 
                 <div className='invitation_button reveal'>
                   <button
-                    className={foraData() ? "btn_outline_clicked" : "btn_outline"}
+                    className={foraData ? "btn_outline_clicked" : "btn_outline"}
                     onClick={onClick}
-                    disabled={foraData()}
+                    disabled={foraData}
                   >
                     {convidado?.confirmado === true ? "Presença Confirmada" : "Confirmar Presença"}
                   </button>
@@ -66,11 +72,7 @@ function Invitation() {
                     convidado={convidado}
                     setConvidado={setConvidado}
                   />
-                </div>   
-
-                <p className='invitation_limit reveal' style={{visibility: foraData() ? 'collapse' : 'visible'}}>
-                  Não deixe de confirmar sua presença até o dia 16 de Junho.
-                </p>           
+                </div>         
               </>
         }
       </div>
