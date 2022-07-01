@@ -109,10 +109,10 @@ export default function Folheto(props) {
       <section id="liturgia-palavra" className="fol-body">
         <Rito text="Liturgia da Palavra" />
         <Leitura
-          title={"Primeira Leitura - Tb 8, 4b-8"}
-          antifon={"Que cheguemos, juntos, a uma idade avançada."}
-          begin={"Leitura do Livro de Tobias"}
-          content={"Na noite de núpcias, disse Tobias a Sara: “Levanta-te, irmã! Oremos e imploremos a nosso Senhor que nos conceda misericórdia e salvação”. Ele levantou-se, e ambos se puseram a orar e a suplicar que lhes fosse concedida a salvação. Ele começou dizendo: “Tu és bendito, ó Deus de nossos pais, e bendito é o teu nome, por todos os séculos e gerações! Que os céus e todas as tuas criaturas te bendigam por todos os séculos! Foste tu quem criou Adão, e para ele criaste Eva, sua mulher, para que lhe servisse de ajuda e apoio. De ambos teve início a geração dos homens. Tu mesmo disseste: “Não é bom que o homem esteja só. Vamos fazer-lhe uma auxiliar semelhante a ele”. Agora, Senhor, não é por desejo impuro que eu recebo, como esposa, esta minha irmã, mas faço-o de coração sincero. Sê misericordioso comigo e com ela e concede-nos que cheguemos, juntos, a uma idade avançada”. Disseram, depois, a uma só voz: “Amém! Amém!”"}
+          title={"Primeira Leitura - Cl 3, 12-17"}
+          antifon={"Sobretudo, amai-vos uns aos outros, pois o amor é o vínculo da perfeição."}
+          begin={"Leitura da Carta de São Paulo aos Colossenses"}
+          content={"Irmãos: Vós sois amados por Deus, sois os seus santos eleitos. Por isso, revesti-vos de sincera misericórdia, bondade, humildade, mansidão e paciência, suportando-vos uns aos outros e perdoando-vos mutuamente, se um tiver queixa contra o outro. Como o Senhor vos perdoou, assim perdoai-vos também. Mas, sobretudo, amai-vos uns aos outros, pois o amor é o vínculo da perfeição. Que a paz de Cristo reine em vossos corações, à qual fostes chamados como membros de um só corpo. E sede agradecidos. Que a palavra de Cristo, com toda a sua riqueza, habite em vós. Ensinai e admoestai-vos uns aos outros com toda a sabedoria. Do fundo dos vossos corações, cantai a Deus salmos, hinos e cânticos espirituais, em ação de graças. Tudo o que fizerdes, em palavras ou obras, seja feito em nome do senhor Jesus Cristo. Por meio dele dai graças a Deus, o Pai."}
           end={"Palavra do Senhor."}
         />
         <Todos text="Graças a Deus."/>
@@ -138,14 +138,6 @@ export default function Folheto(props) {
             aos que guardam fielmente sua Aliança.<br/>
             </>}
         />
-        <Leitura
-          title={"Segunda Leitura - Cl 3, 12-17"}
-          antifon={"Sobretudo, amai-vos uns aos outros, pois o amor é o vínculo da perfeição."}
-          begin={"Leitura da Carta de São Paulo aos Colossenses"}
-          content={"Irmãos: Vós sois amados por Deus, sois os seus santos eleitos. Por isso, revesti-vos de sincera misericórdia, bondade, humildade, mansidão e paciência, suportando-vos uns aos outros e perdoando-vos mutuamente, se um tiver queixa contra o outro. Como o Senhor vos perdoou, assim perdoai-vos também. Mas, sobretudo, amai-vos uns aos outros, pois o amor é o vínculo da perfeição. Que a paz de Cristo reine em vossos corações, à qual fostes chamados como membros de um só corpo. E sede agradecidos. Que a palavra de Cristo, com toda a sua riqueza, habite em vós. Ensinai e admoestai-vos uns aos outros com toda a sabedoria. Do fundo dos vossos corações, cantai a Deus salmos, hinos e cânticos espirituais, em ação de graças. Tudo o que fizerdes, em palavras ou obras, seja feito em nome do senhor Jesus Cristo. Por meio dele dai graças a Deus, o Pai."}
-          end={"Palavra do Senhor."}
-        />
-        <Todos text="Graças a Deus."/>
         <Subtitulo text={"Aclamação ao Evangelho"}/>
         <Canto text="Canto: Aleluia, a Minh'alma Abrirei."/>
         <Leitura
