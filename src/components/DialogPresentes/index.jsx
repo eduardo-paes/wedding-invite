@@ -54,8 +54,8 @@ export default function DialogPresentes({ setOpen, open }) {
       <DialogContent>
         <p>
           <strong>Nosso endereço: </strong>
-          Rua Tharsis e Paula, Nº 901, Casa 2. 
-          Fazenda Caxias, Seropédica-RJ, 23895-175.
+          Rua Antônio da Rocha Paranhos, 171.
+          Fragoso, Magé-RJ, 25903-587.
         </p>
         <CheckTable />
       </DialogContent>      
