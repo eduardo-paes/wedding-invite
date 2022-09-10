@@ -1,6 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
-import CustomTabs from '../components/Tabs'
+import CustomTabs from '../../components/Tabs'
+import './styles.css';
 
 export default function Control(props) {
   const history = useHistory();

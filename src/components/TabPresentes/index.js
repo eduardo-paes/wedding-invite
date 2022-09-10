@@ -87,10 +87,10 @@ export default function TabPresentes() {
     setOpen(false);
   }
 
-  const handleRemove = () => {
+  const handleRemove = (presenteId) => {
     async function removePresente () {
       await apis
-      .RemovePresente(presente._id)
+      .RemovePresente(presenteId)
       .then(res => {
         alert(res.data.message);
         getPresentes();
@@ -135,7 +135,7 @@ export default function TabPresentes() {
                 <Button aria-label="edit" color="primary" onClick={() => handleClickOpen(value)}>
                   <EditIcon />
                 </Button>
-                <Button aria-label="delete" color="secondary" onClick={handleRemove}>
+                <Button aria-label="delete" color="secondary" onClick={() => handleRemove(value._id)}>
                   <DeleteIcon />
                 </Button>
               </td>

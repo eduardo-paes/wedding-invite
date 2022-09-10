@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function Copyright(props) {
-  var date1 = new Date('07/16/2022');
+  var date1 = new Date('07/15/2023');
   var date2 = new Date();
   var difference = date1.getTime() - date2.getTime();
   var days = Math.ceil(difference / (1000 * 3600 * 24));
@@ -33,8 +33,8 @@ export default function Login() {
     let email = data.get('email');
     let pass = data.get('password');
 
-    ((email === process.env.REACT_APP_EMAIL_EDUARDO && pass === process.env.REACT_APP_PASS_EDUARDO) 
-      || (email === process.env.REACT_APP_EMAIL_GIOVANA && pass === process.env.REACT_APP_PASS_GIOVANA)) 
+    ((email === process.env.REACT_APP_EMAIL_LUIZAO && pass === process.env.REACT_APP_PASS_LUIZAO) 
+      || (email === process.env.REACT_APP_EMAIL_TATIANNE && pass === process.env.REACT_APP_PASS_TATIANNE)) 
         && history.push({
             pathname: '/control',
             state: { auth: true }
