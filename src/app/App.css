@@ -3,6 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --primary: #D48B70;
+  --primaryLight: rgb(212, 170, 150);
+  --primaryDark: #A46B56;
+  --secondary: #C24C00;
+  --secondaryDark: #9B3D01;
+  --negative: #FFFFFF;
+  --dark: #000000;
+
+  --lx: 3rem;
+  --lg: 2.5rem;
+  --md: 2rem;
+  --sm: 1rem;
+  --xs: 0.5rem;
+}
 
 .main-container {
   padding: 1rem;

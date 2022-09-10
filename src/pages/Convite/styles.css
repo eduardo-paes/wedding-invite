@@ -1,0 +1,51 @@
+/* @media only screen and (max-width: 1200px) {
+  .main-root {
+    margin: -3.8rem 0 0 0;
+  }
+} */
+
+.conv-container {
+  font-family: 'EB Garamond', serif;
+  color: var(--primary);
+  margin: 1rem;
+  /* border: 0.1rem solid var(--secondary); */
+}
+
+/* BLOCKQUOTE */
+.blockquote-footer {
+  color: var(--primary);
+}
+.conv-frase-flor {
+  display: flex;
+}
+.conv-flor1 {
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* NOMES NOIVOS */
+.conv-noivos {
+  font-family: 'Great Vibes', cursive;
+  color: var(--secondary);
+}
+.conv-noivos > h1 {
+  font-size: 3rem;
+}
+.conv-noivos > h2 {
+  font-size: 2rem;
+}
+
+/* CONVITE PAIS */
+.conv-pais-msg {
+  color: var(--secondary);
+}
+.conv-memoria {
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--primaryLight);
+}
+
+.conv-data {
+  font-size: 3rem;
+}

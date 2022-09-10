@@ -4,7 +4,7 @@ import './styles.css';
 
 export default function Footer() {
   const [open, setOpen] = useState(false);
-  const onClickPix = () => window.open("https://nubank.com.br/pagar/xo385/2DPydkAAcr", "_blank")
+  const onClickPix = () => window.open(process.env.REACT_APP_PIX, "_blank")
   const onClickPresentes = () => setOpen(true);
   return (
     <div className='footer-container'>

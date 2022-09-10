@@ -39,10 +39,10 @@ export default function TabConvidados() {
   }, [])
 
   const getUrl = (id) => {
-    navigator.clipboard.writeText("https://eduardo-giovana.site/" + id).then(function() {
+    navigator.clipboard.writeText(process.env.REACT_APP_SITE_URL + id).then(function() {
       console.log('Convite copiado!');
     }, function(err) {
-      console.error('Could not copy text: ', err);
+      console.error('Não foi possível copiar o texto: ', err);
     });
   }
 
