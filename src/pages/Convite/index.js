@@ -14,7 +14,7 @@ export default function Convite() {
     var reveals = document.querySelectorAll(".reveal");
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
-      if (reveals[i].getBoundingClientRect().top < windowHeight - 50) {
+      if (reveals[i].getBoundingClientRect().top < windowHeight) {
         reveals[i].classList.add("active");
       } else {
         reveals[i].classList.remove("active");
@@ -64,7 +64,7 @@ export default function Convite() {
     <>
       <div className="conv-container m-2 m-sm-4 p-2 p-sm-4">
         {/* BLOCKQUOTE */}
-        <section className="conv-frase row mb-1 reveal">
+        <section className="conv-frase row mb-1">
           <div className="col-md-6 col-12 d-flex justify-content-center">
             <img className="conv-flor1" src={Flor1} alt="flor-1" />
           </div>
@@ -151,7 +151,7 @@ export default function Convite() {
           </div>
         </section>
       </div>
-
+      
       <section className="conv-lista-presentes reveal">
         <Footer />
       </section>
