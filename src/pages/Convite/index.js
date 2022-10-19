@@ -8,7 +8,7 @@ import apis from "../../api";
 
 export default function Convite() {
   const [convidado, setConvidado] = useState();
-  const [foraData, setForaData] = useState(true);
+  const [foraData, setForaData] = useState(false);
   
   window.addEventListener("scroll", () => {
     var reveals = document.querySelectorAll(".reveal");
@@ -78,7 +78,7 @@ export default function Convite() {
         </section>
 
         {/* NOMES NOIVOS */}
-        <section className="conv-noivos row my-3 reveal">
+        <section className="conv-noivos row my-3">
           <h1 className="col-12 d-flex justify-content-center">
             Luiz Otávio Borges
           </h1>

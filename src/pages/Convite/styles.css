@@ -24,7 +24,7 @@
   color: var(--secondary);
 }
 .conv-noivos > h1 {
-  font-size: var(--lx);
+  font-size: var(--lxx);
 }
 .conv-noivos > h2 {
   font-size: var(--md);
@@ -51,7 +51,42 @@
 .conv-endereco > h3 {
   font-size: var(--md);
 }
+
+/* CONFIRMAR PRESENCA */
+.cta-button {
+  background-color: var(--negative);
+  border-radius: var(--xs);
+  border: 2.5px solid var(--primary);
+  color: var(--primary);
+  cursor: pointer;
+  font-size: var(--lg);
+  font-weight: 600;
+  outline: none;
+  padding: var(--xs) var(--md);
+  transition: all 0.3s ease-out;
+}
+.cta-button:hover {
+  transition: all 0.3s ease-out;
+  background: var(--primary);
+  color: var(--negative);
+  transition: 250ms;
+}
+.cta-button-clicked {
+  background-color: var(--light);
+  border: 2.5px solid var(--primaryLight);
+  border-radius: 5px;
+  color: var(--primaryLight);
+  font-size: var(--lg);
+  font-weight: 600;
+  outline: none;
+  padding: var(--xs) var(--md);
+  transition: all 0.3s ease-out;
+}
+
 @media only screen and (max-width: 768px) {
+  .conv-noivos > h1 {
+    font-size: var(--lx);
+  }
   .flor-separator {
     width: 25%;
   }
@@ -63,38 +98,4 @@
     text-align: center;
     font-size: 1.5rem;
   }
-}
-
-
-.cta-button {
-  border-radius: var(--xs);
-  outline: none;
-  border: none;
-  cursor: pointer;
-  padding: var(--xs) var(--md);
-  font-size: var(--lg);
-  font-weight: 600;
-  background-color: var(--negative);
-  color: var(--primary);
-  border: 2.5px solid var(--primary);
-  transition: all 0.3s ease-out;
-}
-.cta-button:hover {
-  transition: all 0.3s ease-out;
-  background: var(--primary);
-  color: var(--negative);
-  transition: 250ms;
-}
-.cta-button-clicked {
-  border-radius: 5px;
-  outline: none;
-  border: none;
-  padding: 8px 20px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  background-color: var(--light);
-  color: var(--primaryLight);
-  border: 3px solid var(--primaryLight);
-  transition: all 0.3s ease-out;
-  margin-top: var(--md);
 }
