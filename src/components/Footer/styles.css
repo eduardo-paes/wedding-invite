@@ -49,7 +49,7 @@
 .btn_footer:hover {
   transition: all 0.3s ease-out;
   background: #fff;
-  color: #2a3554;
+  color: var(--primary);
   transition: 250ms;
   font-weight: bold;
 }

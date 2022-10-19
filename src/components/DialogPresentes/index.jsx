@@ -9,6 +9,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import CheckTable from '../CheckTable';
 import './styles.css';
+import { env } from '../../environment';
 
 const styles = (theme) => ({
   root: {
@@ -54,8 +55,7 @@ export default function DialogPresentes({ setOpen, open }) {
       <DialogContent>
         <p>
           <strong>Nosso endereço: </strong>
-          Rua Antônio da Rocha Paranhos, 171.
-          Fragoso, Magé-RJ, 25903-587.
+          {env.endereco}
         </p>
         <CheckTable />
       </DialogContent>      

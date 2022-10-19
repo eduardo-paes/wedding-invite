@@ -4,12 +4,12 @@
   box-sizing: border-box;
 }
 :root {
-  --primary: #D48B70;
-  --primaryLight: rgb(212, 170, 150);
-  --primaryDark: #A46B56;
-  --secondary: #C24C00;
-  --secondaryDark: #9B3D01;
-  --negative: #FFFFFF;
+  --primary: hsl(20, 40%, 50%);
+  --primaryLight: hsl(20, 40%, 60%);
+  --primaryDark: hsl(20, 40%, 40%);
+  --secondary: hsl(25, 100%, 40%);
+  --secondaryDark: hsl(25, 100%, 30%);
+  --negative: #ffffff;
   --dark: #000000;
 
   --lx: 3rem;
@@ -17,6 +17,12 @@
   --md: 2rem;
   --sm: 1rem;
   --xs: 0.5rem;
+
+  --sizeSM: 576px;
+  --sizeMD: 768px;
+  --sizeLG: 992px;
+  --sizeXL: 1200px;
+  --sizeXXL: 1400px;
 }
 
 .main-container {

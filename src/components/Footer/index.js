@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { env } from '../../environment';
 import DialogPresentes from '../DialogPresentes';
 import './styles.css';
 
 export default function Footer() {
   const [open, setOpen] = useState(false);
-  const onClickPix = () => window.open(process.env.REACT_APP_PIX, "_blank")
+  const onClickPix = () => window.open(env.urlPix, "_blank")
   const onClickPresentes = () => setOpen(true);
   return (
     <div className='footer-container'>

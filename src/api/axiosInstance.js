@@ -1,9 +1,6 @@
 import axios from "axios"
+import { env } from "../environment";
 
-const axiosInstance = axios.create({ 
-  // baseURL: 'https://eduardo-giovana.herokuapp.com/api/',
-  baseURL: 'http://localhost:4444/api/',
+export default axios.create({
+  baseURL: env.urlApi,
 });
-axiosInstance.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-
-export default axiosInstance;

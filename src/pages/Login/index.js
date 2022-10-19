@@ -9,6 +9,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { env } from '../../environment';
 
 function Copyright(props) {
   var date1 = new Date('07/15/2023');
@@ -33,8 +34,8 @@ export default function Login() {
     let email = data.get('email');
     let pass = data.get('password');
 
-    ((email === process.env.REACT_APP_EMAIL_LUIZAO && pass === process.env.REACT_APP_PASS_LUIZAO) 
-      || (email === process.env.REACT_APP_EMAIL_TATIANNE && pass === process.env.REACT_APP_PASS_TATIANNE)) 
+    ((email === env.loginLuizao && pass === env.passLuizao) 
+      || (email === env.loginTatianne && pass === env.passTatianne)) 
         && history.push({
             pathname: '/control',
             state: { auth: true }

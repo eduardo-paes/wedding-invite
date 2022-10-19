@@ -1,14 +1,8 @@
-/* @media only screen and (max-width: 1200px) {
-  .main-root {
-    margin: -3.8rem 0 0 0;
-  }
-} */
-
 .conv-container {
   font-family: 'EB Garamond', serif;
   color: var(--primary);
-  margin: 1rem;
-  /* border: 0.1rem solid var(--secondary); */
+  margin: var(--sm);
+  /* border: 0.var(--sm) solid var(--secondary); */
 }
 
 /* BLOCKQUOTE */
@@ -30,10 +24,10 @@
   color: var(--secondary);
 }
 .conv-noivos > h1 {
-  font-size: 3rem;
+  font-size: var(--lx);
 }
 .conv-noivos > h2 {
-  font-size: 2rem;
+  font-size: var(--md);
 }
 
 /* CONVITE PAIS */
@@ -41,11 +35,66 @@
   color: var(--secondary);
 }
 .conv-memoria {
-  font-size: 1rem;
+  font-size: var(--sm);
   font-style: italic;
   color: var(--primaryLight);
 }
 
+/* FLOR - ENDERECO - DATA */
+.flor-separator {
+  width: 15%;
+}
 .conv-data {
-  font-size: 3rem;
+  font-size: var(--lx);
+  font-weight: 600;
+}
+.conv-endereco > h3 {
+  font-size: var(--md);
+}
+@media only screen and (max-width: 768px) {
+  .flor-separator {
+    width: 25%;
+  }
+  .conv-data {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .conv-endereco > h3 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+
+.cta-button {
+  border-radius: var(--xs);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--xs) var(--md);
+  font-size: var(--lg);
+  font-weight: 600;
+  background-color: var(--negative);
+  color: var(--primary);
+  border: 2.5px solid var(--primary);
+  transition: all 0.3s ease-out;
+}
+.cta-button:hover {
+  transition: all 0.3s ease-out;
+  background: var(--primary);
+  color: var(--negative);
+  transition: 250ms;
+}
+.cta-button-clicked {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 8px 20px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  background-color: var(--light);
+  color: var(--primaryLight);
+  border: 3px solid var(--primaryLight);
+  transition: all 0.3s ease-out;
+  margin-top: var(--md);
 }
