@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+p {
+  margin: 0.3rem 0;
+  line-height: 1.3;
+}
+
 .main-container {
   padding: 1rem;
   margin: 0;
@@ -15,7 +20,7 @@
 
 /* Folheto  */
 .folheto {
-	font-family: Cambria,Georgia,serif; 
+  font-family: Cambria, Georgia, serif;
   padding: 1.5rem;
   background-color: hsl(44, 20%, 85%);
 }
@@ -42,6 +47,7 @@
 .fol-subtitle {
   font-size: 1.4rem;
   font-weight: bold;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .fol-cite {
